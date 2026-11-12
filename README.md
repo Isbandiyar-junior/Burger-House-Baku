@@ -72,8 +72,8 @@ Bakıda yerləşən **uydurma** burger restoranı üçün tam veb sayt: menyu, s
 
 1. Layihəni yükləyin:
    ```bash
-   git clone https://github.com/Isbandiyar-junior/baku-burger-house.git
-   cd baku-burger-house
+   git clone https://github.com/Isbandiyar-junior/Burger-House-Baku.git
+   cd Burger-House-Baku
    ```
 
 2. `.env.example` faylını `.env` adı ilə kopyalayın və öz parollarınızı yazın:
