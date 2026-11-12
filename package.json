@@ -1,0 +1,17 @@
+{
+  "name": "baku-burger-house-server",
+  "version": "1.0.0",
+  "description": "Burger House Baku - Node.js + Express server",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "db:setup": "node db/setup.js",
+    "build:react": "npm --prefix react-version install && npm --prefix react-version run build"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "pg": "^8.23.1"
+  }
+}

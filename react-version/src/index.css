@@ -1,0 +1,813 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 110px;
+}
+
+body {
+    background-color: #000;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* ================= HEADER ================= */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 40px;
+    background-color: rgba(0, 0, 0, 0.95);
+    border-bottom: 1px solid #222;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.navbar {
+    gap: 25px;
+    display: flex;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #ff8c00;
+    font-size: 18px;
+    transition: color 0.2s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #fff;
+}
+
+.cart {
+    background-color: #ff8c00;
+    cursor: pointer;
+    border: none;
+    color: #000;
+    border-radius: 10px;
+    padding: 8px 12px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.cart-count {
+    display: inline-block;
+    background: #000;
+    color: #ff8c00;
+    border-radius: 50%;
+    min-width: 22px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    font-size: 13px;
+    margin-left: 4px;
+}
+
+.cart-count.bump {
+    animation: bump 0.3s;
+}
+
+@keyframes bump {
+    50% { transform: scale(1.4); }
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #ff8c00;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+/* ================= ÜMUMİ ================= */
+section {
+    padding: 40px;
+}
+
+section h2 {
+    color: #ff8c00;
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #ff8c00;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn:hover {
+    background-color: #ffa733;
+    transform: translateY(-2px);
+}
+
+.add {
+    width: 35px;
+    height: 35px;
+    border: none;
+    border-radius: 8px;
+    background-color: #ff8c00;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.15s, background-color 0.2s;
+}
+
+.add:hover {
+    background-color: #ffa733;
+    transform: scale(1.1);
+}
+
+/* ================= HOME ================= */
+.main_part {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 70vh;
+    text-align: center;
+    background: radial-gradient(circle at center, #2a1500 0%, #000 70%);
+}
+
+.subtitle {
+    color: #ff8c00;
+    letter-spacing: 4px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.main-content h1 {
+    font-size: 56px;
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+.main-content p {
+    color: #ccc;
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+/* ================= BURGERLƏR və YEMƏKLƏR ================= */
+.burger-container,
+.food-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.burger-card,
+.food-card {
+    display: flex;
+    background-color: #111;
+    border-radius: 8px;
+    overflow: hidden;
+    color: #ff8c00;
+    border: 1px solid #1c1c1c;
+    transition: border-color 0.2s;
+}
+
+.burger-card:hover,
+.food-card:hover {
+    border-color: #ff8c00;
+}
+
+.burger-photo,
+.food-photo {
+    width: 250px;
+    height: 200px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.emoji-photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 70px;
+    background: linear-gradient(135deg, #2a1500, #111);
+}
+
+.burger-info,
+.food-info {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.burger-info h3,
+.food-info h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.burger-info p,
+.food-info p {
+    color: #ddd;
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+.burger-bs,
+.food-bs,
+.drink-bs,
+.combo-bs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ================= İÇKİLƏR və KOMBOLAR ================= */
+.drink-container,
+.combo-container,
+.branch-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.drink-card,
+.combo-card,
+.branch-card {
+    position: relative;
+    background-color: #111;
+    border: 1px solid #1c1c1c;
+    border-radius: 8px;
+    padding: 20px;
+    color: #ff8c00;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.drink-card:hover,
+.combo-card:hover,
+.branch-card:hover {
+    transform: translateY(-4px);
+    border-color: #ff8c00;
+}
+
+.drink-card {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Qiymət sətri həmişə kartın ən altında olsun */
+.drink-bs {
+    margin-top: auto;
+}
+
+/* İçki və kombo şəkilləri */
+.drink-photo,
+.combo-photo {
+    display: block;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    background-color: #1a1a1a;
+}
+
+.combo-photo {
+    height: 200px;
+}
+
+.drink-card h3,
+.combo-card h3,
+.branch-card h3 {
+    margin-bottom: 8px;
+}
+
+.drink-card p,
+.combo-card p,
+.branch-card p {
+    color: #ddd;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.combo-container {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+.combo-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.combo-bs {
+    margin-top: auto;
+}
+
+.combo-card .old-price {
+    color: #777;
+    text-decoration: line-through;
+    margin-bottom: 8px;
+}
+
+.badge {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    z-index: 1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    background: #ff8c00;
+    color: #000;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+
+/* ================= İŞƏ QƏBUL ================= */
+.careers {
+    text-align: center;
+    background: linear-gradient(135deg, #2a1500, #000);
+    padding: 60px 40px;
+}
+
+.careers p {
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+/* ================= SƏBƏT ================= */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    z-index: 90;
+}
+
+.overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.cart-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 380px;
+    max-width: 100%;
+    height: 100%;
+    background: #111;
+    border-left: 2px solid #ff8c00;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.3s;
+    z-index: 100;
+}
+
+.cart-panel.open {
+    transform: translateX(0);
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #222;
+}
+
+.cart-header h2 {
+    color: #ff8c00;
+}
+
+.close-cart {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.cart-items {
+    list-style: none;
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px 20px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 0;
+    border-bottom: 1px solid #222;
+}
+
+.cart-item-name {
+    font-weight: bold;
+}
+
+.cart-item-price {
+    color: #aaa;
+    font-size: 13px;
+}
+
+.qty {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.qty button {
+    width: 28px;
+    height: 28px;
+    border: none;
+    border-radius: 6px;
+    background: #ff8c00;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cart-empty {
+    text-align: center;
+    color: #777;
+    padding: 40px 20px;
+}
+
+.cart-footer {
+    padding: 20px;
+    border-top: 1px solid #222;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+}
+
+.cart-total strong {
+    color: #ff8c00;
+}
+
+.order-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.order-form input {
+    width: 100%;
+    padding: 10px;
+    background: #000;
+    color: #fff;
+    border: 1px solid #333;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+.order-form input:focus {
+    outline: none;
+    border-color: #ff8c00;
+}
+
+.clear-cart {
+    background: none;
+    border: 1px solid #444;
+    color: #aaa;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.clear-cart:hover {
+    border-color: #ff8c00;
+    color: #ff8c00;
+}
+
+/* ================= TOAST ================= */
+.toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translate(-50%, 100px);
+    background: #ff8c00;
+    color: #000;
+    font-weight: bold;
+    padding: 12px 24px;
+    border-radius: 10px;
+    opacity: 0;
+    transition: transform 0.3s, opacity 0.3s;
+    z-index: 200;
+}
+
+.toast.show {
+    transform: translate(-50%, 0);
+    opacity: 1;
+}
+
+/* ================= FOOTER ================= */
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    border-top: 1px solid #222;
+    color: #888;
+    font-size: 14px;
+}
+
+.footer-logo {
+    color: #ff8c00;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+footer p {
+    margin-top: 5px;
+}
+
+footer a,
+.consent a,
+.legal-page a {
+    color: #ff8c00;
+}
+
+/* Formların altındakı razılıq qeydi */
+.consent {
+    color: #999;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+/* ================= MƏXFİLİK / ŞƏRTLƏR SƏHİFƏLƏRİ ================= */
+.legal-page {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 40px 20px 60px;
+    color: #ddd;
+    line-height: 1.7;
+}
+
+.legal-page h1 {
+    color: #ff8c00;
+    font-size: 36px;
+    margin-bottom: 5px;
+}
+
+.legal-page h2 {
+    color: #ff8c00;
+    font-size: 22px;
+    margin: 30px 0 10px;
+}
+
+.legal-page p,
+.legal-page ul {
+    margin-bottom: 12px;
+}
+
+.legal-page ul {
+    padding-left: 22px;
+}
+
+.legal-page .updated {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.demo-note {
+    background: #2a1500;
+    border: 1px solid #ff8c00;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.legal-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.legal-table th,
+.legal-table td {
+    border: 1px solid #333;
+    padding: 10px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.legal-table th {
+    background: #111;
+    color: #ff8c00;
+}
+
+.legal-links {
+    margin-top: 40px;
+}
+
+@media (max-width: 600px) {
+    .legal-table,
+    .legal-table tbody,
+    .legal-table tr,
+    .legal-table td {
+        display: block;
+    }
+
+    .legal-table thead {
+        display: none;
+    }
+
+    .legal-table tr {
+        margin-bottom: 12px;
+    }
+}
+
+/* ================= CAREERS SƏHİFƏSİ ================= */
+.career-page {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.jobs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.job-card {
+    background: #111;
+    border: 1px solid #1c1c1c;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.job-card .btn {
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+.job-card .salary {
+    margin-bottom: 15px;
+}
+
+.job-card h3 {
+    color: #ff8c00;
+    margin-bottom: 8px;
+}
+
+.job-card p {
+    color: #ccc;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.job-card .salary {
+    color: #fff;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.career-form {
+    background: #111;
+    border-radius: 8px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.career-form label {
+    color: #ff8c00;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.career-form input,
+.career-form select,
+.career-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    background: #000;
+    color: #fff;
+    border: 1px solid #333;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: inherit;
+}
+
+.career-form input:focus,
+.career-form select:focus,
+.career-form textarea:focus {
+    outline: none;
+    border-color: #ff8c00;
+}
+
+.error {
+    color: #ff5c5c;
+    font-size: 13px;
+    min-height: 16px;
+}
+
+.success-msg {
+    background: #143d14;
+    color: #8fff8f;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* ================= RESPONSİV ================= */
+@media (max-width: 1100px) {
+    .navbar a {
+        font-size: 16px;
+    }
+    .navbar {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 900px) {
+    header {
+        padding: 10px 20px;
+    }
+
+    .menu-toggle {
+        display: block;
+        order: 3;
+    }
+
+    .navbar {
+        display: none;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: #000;
+        padding: 20px;
+        border-bottom: 2px solid #ff8c00;
+    }
+
+    .navbar.open {
+        display: flex;
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 30px 16px;
+    }
+
+    .main-content h1 {
+        font-size: 36px;
+    }
+
+    .burger-card,
+    .food-card {
+        flex-direction: column;
+    }
+
+    .burger-photo,
+    .food-photo {
+        width: 100%;
+        height: 220px;
+    }
+}

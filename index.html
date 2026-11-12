@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="az">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger House Baku</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <a href="#home"><img src="logo.jpeg" alt="logo BHB" class="logo"></a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menyu">☰</button>
+        <nav class="navbar" id="navbar">
+            <a href="#home">Ana səhifə</a>
+            <a href="#burgers">Burgerlərimiz</a>
+            <a href="#foods">Digər yeməklər</a>
+            <a href="#drinks">İçkilər</a>
+            <a href="#combos">Kombolar</a>
+            <a href="#branches">Ünvanlarımız</a>
+            <a href="careers.html">İşə qəbul</a>
+        </nav>
+        <button class="cart" id="cartBtn">
+            🛒 Səbət <span class="cart-count" id="cartCount">0</span>
+        </button>
+    </header>
+
+    <main>
+        <section id="home" class="main_part">
+            <div class="main-content">
+                <p class="subtitle">FRESH • HOT • LOCAL</p>
+                <h1>Ac olanda<br>Burger House Baku var.</h1>
+                <p>Təzə hazırlanmış burgerlər, xırtıldayan kartof və özəl souslar.</p>
+                <a href="#burgers" class="btn">Menyuya bax</a>
+            </div>
+        </section>
+
+        <!-- ================= BURGERLƏR ================= -->
+        <section id="burgers" class="burgers">
+            <h2>Burgerlərimiz</h2>
+            <div class="burger-container">
+
+                <!-- Classic Burger -->
+                <div class="burger-card" data-name="Classic Burger" data-price="12">
+                    <img src="burgers/klasik.jpg" alt="Classic Burger" class="burger-photo" loading="lazy">
+                    <div class="burger-info">
+                        <h3>Classic Burger</h3>
+                        <p>Classic Burger, xüsusi reseptlə hazırlanmış yumşaq buryoş çörəyi, ağızda əriyən 100% təbii dana əti, üzərində tam ərimiş zəngin Çeddar pendiri, təzə pomidor, marul və qırmızı soğan dilimlərinin mükəmməl ahəngidir. Klassik dadı sevənlər üçün əvəzolunmaz seçimdir.</p>
+                        <div class="burger-bs">
+                            <strong>Qiymət: 12 AZN</strong>
+                            <button class="add">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bikon Burger -->
+                <div class="burger-card" data-name="Bikon Burger" data-price="17">
+                    <img src="burgers/bikon.jpg" alt="Bikon Burger" class="burger-photo" loading="lazy">
+                    <div class="burger-info">
+                        <h3>Bikon Burger</h3>
+                        <p>Xüsusi reseptlə hazırlanmış yumşaq buryoş çörəyi, ağızda əriyən 100% təbii dana əti, üzərində tam ərimiş zəngin Çeddar pendiri, xırtıldayan qızılı bikon (bacon) dilimləri, təzə pomidor, marul, qırmızı soğan və xüsusi burger sousunun mükəmməl ahəngidir.</p>
+                        <div class="burger-bs">
+                            <strong>Qiymət: 17 AZN</strong>
+                            <button class="add">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Qara Lobya Burger -->
+                <div class="burger-card" data-name="Qara Lobya Burger" data-price="15.50">
+                    <img src="burgers/Qara lobya.jpg" alt="Qara Lobya Burger" class="burger-photo" loading="lazy">
+                    <div class="burger-info">
+                        <h3>Qara Lobya Burger</h3>
+                        <p>Xüsusi reseptlə hazırlanmış qızılı-qəhvəyi buryoş çörəyi, qara lobya, qarğıdalı və təzə bibər tikələri ilə zənginləşdirilmiş bitki mənşəli köftə, üzərində tam ərimiş Çeddar pendiri, karamelləşdirilmiş soğan, təzə pomidor, qırmızı soğan dilimləri, təravətli rukola və xüsusi burger sousunun mükəmməl ahəngidir.</p>
+                        <div class="burger-bs">
+                            <strong>Qiymət: 15.50 AZN</strong>
+                            <button class="add">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Xalapenyo Burger -->
+                <div class="burger-card" data-name="Xalapenyo Burger" data-price="11">
+                    <img src="burgers/xalapenyo.jpg" alt="Xalapenyo Burger" class="burger-photo" loading="lazy">
+                    <div class="burger-info">
+                        <h3>Xalapenyo Burger</h3>
+                        <p>Xüsusi reseptlə hazırlanmış yumşaq buryoş çörəyi, ağızda əriyən 100% təbii dana əti, üzərində tam ərimiş zəngin Çeddar pendiri, acısevərlər üçün xüsusi xalapenyo bibər dilimləri, təzə pomidor, marul, qırmızı soğan və yüngül acılı xüsusi burger sousunun mükəmməl ahəngidir.</p>
+                        <div class="burger-bs">
+                            <strong>Qiymət: 11 AZN</strong>
+                            <button class="add">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Green Gourmet -->
+                <div class="burger-card" data-name="Green Gourmet" data-price="11">
+                    <img src="burgers/Green Gourmet.jpg" alt="Green Gourmet" class="burger-photo" loading="lazy">
+                    <div class="burger-info">
+                        <h3>Green Gourmet</h3>
+                        <p>Xüsusi reseptlə hazırlanmış yumşaq buryoş çörəyi, ağızda əriyən 100% təbii dana əti, üzərində tam ərimiş zəngin Çeddar pendiri, təravətli rukola, xüsusi göyərtili sous və təzə tərəvəzlərin mükəmməl ahəngidir.</p>
+                        <div class="burger-bs">
+                            <strong>Qiymət: 11 AZN</strong>
+                            <button class="add">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Avakado Burger -->
+                <div class="burger-card" data-name="Avakado Burger" data-price="11">
+                    <img src="burgers/avakado.jpg" alt="Avakado" class="burger-photo" loading="lazy">
+                    <div class="burger-info">
+                        <h3>Avakado</h3>
+                        <p>Hamının sevimlisi, avakadolar ilə ət burgerin xüsusi aromasına əlavə edilən Çeddar pendirinin ahəngini damağlarınızda hiss edin.</p>
+                        <div class="burger-bs">
+                            <strong>Qiymət: 11 AZN</strong>
+                            <button class="add">+</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= DİGƏR YEMƏKLƏR ================= -->
+        <section id="foods" class="foods">
+            <h2>Digər yeməklər</h2>
+            <div class="food-container">
+
+                <div class="food-card" data-name="French Fries" data-price="4">
+                    <img src="food/frees.jpg" alt="French fries" class="food-photo" loading="lazy">
+                    <div class="food-info">
+                        <h3>French Fries</h3>
+                        <p>Kajun baharatı ilə hazırlanmış xırtıldayan kartoflar.</p>
+                        <div class="food-bs">
+                            <strong>Qiymət: 4 AZN</strong>
+                            <button class="add">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="food-card" data-name="Toyuq nuggets və tenders" data-price="6">
+                    <img src="food/toyuq.jpg" alt="Toyuq nuggets" class="food-photo" loading="lazy">
+                    <div class="food-info">
+                        <h3>Toyuq nuggetsləri və tenderləri</h3>
+                        <p>Xüsusi ədviyyatlarla marinad olunmuş, xırtıldayan qızılı panko qatı ilə qızardılmış yumşaq toyuq naggetsləri və uzunsov tenderlər. Yanında xüsusi ev üsulu kremli göyərtili sous ilə təqdim olunur.</p>
+                        <div class="food-bs">
+                            <strong>Qiymət: 6 AZN</strong>
+                            <button class="add">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="food-card" data-name="Soğan halqaları" data-price="5">
+                    <img src="food/sogan.jpg" alt="Soğan halqaları" class="food-photo" loading="lazy">
+                    <div class="food-info">
+                        <h3>Soğan halqaları</h3>
+                        <p>Xüsusi ədviyyatlarla zənginləşdirilmiş, xırtıldayan qızılı örtüklü soğan halqaları. İçi yumşaq, çölü xırt-xırtlı bu ləzzət hər dişləmədə sizi valeh edəcək.</p>
+                        <div class="food-bs">
+                            <strong>Qiymət: 5 AZN</strong>
+                            <button class="add">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Yeni yeməklər -->
+                <div class="food-card" data-name="Pendirli kartof" data-price="6">
+                    <img src="food/pendir kartof.jpg" alt="Pendirli kartof" class="food-photo" loading="lazy">
+                    <div class="food-info">
+                        <h3>Pendirli kartof</h3>
+                        <p>Xırtıldayan kartof fri, üzərində isti ərimiş çeddar sousu və xırtıldayan bikon tikələri. Pendir sevənlər üçün ideal seçim.</p>
+                        <div class="food-bs">
+                            <strong>Qiymət: 6 AZN</strong>
+                            <button class="add">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="food-card" data-name="Acılı toyuq qanadları" data-price="9">
+                    <img src="food/acili toyuq qanadlari.jpg" alt="Acılı toyuq qanadları" class="food-photo" loading="lazy">
+                    <div class="food-info">
+                        <h3>Acılı toyuq qanadları</h3>
+                        <p>8 ədəd buffalo sousunda bişirilmiş şirəli toyuq qanadı. Yanında sərinləşdirici sarımsaqlı sous və kərəviz çubuqları ilə.</p>
+                        <div class="food-bs">
+                            <strong>Qiymət: 9 AZN</strong>
+                            <button class="add">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="food-card" data-name="Mozzarella çubuqları" data-price="7">
+                    <img src="food/mozeralla cubuqlari.jpg" alt="Mozzarella çubuqları" class="food-photo" loading="lazy">
+                    <div class="food-info">
+                        <h3>Mozzarella çubuqları</h3>
+                        <p>Çölü xırtıldayan, içi uzanan isti mozzarella pendiri. 6 ədəd, pomidorlu marinara sousu ilə təqdim olunur.</p>
+                        <div class="food-bs">
+                            <strong>Qiymət: 7 AZN</strong>
+                            <button class="add">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="food-card" data-name="Kartof dilimləri" data-price="4.50">
+                    <img src="food/kartof dilimleri.jpg" alt="Kartof dilimləri" class="food-photo" loading="lazy">
+                    <div class="food-info">
+                        <h3>Kartof dilimləri</h3>
+                        <p>Qabıqlı, rozmarin və sarımsaqla sobada bişirilmiş qalın kartof dilimləri. Yanında xama sousu.</p>
+                        <div class="food-bs">
+                            <strong>Qiymət: 4.50 AZN</strong>
+                            <button class="add">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="food-card" data-name="Sezar salatı" data-price="8">
+                    <img src="food/sezar salati.jpg" alt="Sezar salatı" class="food-photo" loading="lazy">
+                    <div class="food-info">
+                        <h3>Sezar salatı</h3>
+                        <p>Təzə aysberq kahısı, qril toyuq, parmezan pendiri, xırtıldayan qrenkilər və klassik Sezar sousu.</p>
+                        <div class="food-bs">
+                            <strong>Qiymət: 8 AZN</strong>
+                            <button class="add">+</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= İÇKİLƏR ================= -->
+        <section id="drinks" class="drinks">
+            <h2>İçkilər</h2>
+            <div class="drink-container">
+
+                <div class="drink-card" data-name="Coca-Cola" data-price="2">
+                    <img src="food/cola.jpg" alt="Coca-Cola" class="drink-photo" loading="lazy">
+                    <h3>Coca-Cola</h3>
+                    <p>0.5 L, buzlu</p>
+                    <div class="drink-bs">
+                        <strong>2 AZN</strong>
+                        <button class="add">+</button>
+                    </div>
+                </div>
+
+                <div class="drink-card" data-name="Fanta" data-price="2">
+                    <img src="food/fanta.jpg" alt="Fanta" class="drink-photo" loading="lazy">
+                    <h3>Fanta</h3>
+                    <p>0.5 L, portağal dadlı</p>
+                    <div class="drink-bs">
+                        <strong>2 AZN</strong>
+                        <button class="add">+</button>
+                    </div>
+                </div>
+
+                <div class="drink-card" data-name="Ev limonadı" data-price="4">
+                    <img src="food/limonad.jpg" alt="Ev limonadı" class="drink-photo" loading="lazy">
+                    <h3>Ev limonadı</h3>
+                    <p>Təzə limon, nanə və bal ilə</p>
+                    <div class="drink-bs">
+                        <strong>4 AZN</strong>
+                        <button class="add">+</button>
+                    </div>
+                </div>
+
+                <div class="drink-card" data-name="Ayran" data-price="1.50">
+                    <img src="food/ayran.png" alt="Ayran" class="drink-photo" loading="lazy">
+                    <h3>Ayran</h3>
+                    <p>Təbii, sərin ayran</p>
+                    <div class="drink-bs">
+                        <strong>1.50 AZN</strong>
+                        <button class="add">+</button>
+                    </div>
+                </div>
+
+                <div class="drink-card" data-name="Şokoladlı milkşeyk" data-price="5">
+                    <img src="food/skldmilk.png" alt="Şokoladlı milkşeyk" class="drink-photo" loading="lazy">
+                    <h3>Şokoladlı milkşeyk</h3>
+                    <p>Dondurma, süd və Belçika şokoladı</p>
+                    <div class="drink-bs">
+                        <strong>5 AZN</strong>
+                        <button class="add">+</button>
+                    </div>
+                </div>
+
+                <div class="drink-card" data-name="Çiyələkli milkşeyk" data-price="5">
+                    <img src="food/Str.png" alt="Çiyələkli milkşeyk" class="drink-photo" loading="lazy">
+                    <h3>Çiyələkli milkşeyk</h3>
+                    <p>Təzə çiyələk və vanil dondurması</p>
+                    <div class="drink-bs">
+                        <strong>5 AZN</strong>
+                        <button class="add">+</button>
+                    </div>
+                </div>
+
+                <div class="drink-card" data-name="Buzlu çay" data-price="3">
+                    <img src="food/buzlu cay.jpg" alt="Buzlu çay" class="drink-photo" loading="lazy">
+                    <h3>Buzlu çay</h3>
+                    <p>Şaftalı dadlı, ev üsulu</p>
+                    <div class="drink-bs">
+                        <strong>3 AZN</strong>
+                        <button class="add">+</button>
+                    </div>
+                </div>
+
+                <div class="drink-card" data-name="Mineral su" data-price="1">
+                    <img src="food/mineral su.jpg" alt="Mineral su" class="drink-photo" loading="lazy">
+                    <h3>Mineral su</h3>
+                    <p>0.5 L, qazlı və ya qazsız</p>
+                    <div class="drink-bs">
+                        <strong>1 AZN</strong>
+                        <button class="add">+</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= KOMBOLAR ================= -->
+        <section id="combos" class="combos">
+            <h2>Kombolar</h2>
+            <div class="combo-container">
+
+                <div class="combo-card" data-name="Klassik Kombo" data-price="16">
+                    <span class="badge">-2 AZN</span>
+                    <img src="food/combo menyu.jpg" alt="Klassik Kombo" class="combo-photo" loading="lazy">
+                    <h3>Klassik Kombo</h3>
+                    <p>Classic Burger + French Fries + Coca-Cola</p>
+                    <p class="old-price">18 AZN</p>
+                    <div class="combo-bs">
+                        <strong>16 AZN</strong>
+                        <button class="add">+</button>
+                    </div>
+                </div>
+
+                <div class="combo-card" data-name="Acılı Kombo" data-price="20">
+                    <span class="badge">-4 AZN</span>
+                    <img src="food/combo menyu 2.jpg" alt="Acılı Kombo" class="combo-photo" loading="lazy">
+                    <h3>Acılı Kombo</h3>
+                    <p>Xalapenyo Burger + Acılı toyuq qanadları + Ev limonadı</p>
+                    <p class="old-price">24 AZN</p>
+                    <div class="combo-bs">
+                        <strong>20 AZN</strong>
+                        <button class="add">+</button>
+                    </div>
+                </div>
+
+                <div class="combo-card" data-name="Ailə Kombosu" data-price="45">
+                    <span class="badge">ƏN SƏRFƏLİ</span>
+                    <img src="food/family combo.png" alt="Ailə Kombosu" class="combo-photo" loading="lazy">
+                    <h3>Ailə Kombosu</h3>
+                    <p>3 Classic Burger + Bikon Burger + 2 French Fries + Soğan halqaları + 4 içki</p>
+                    <p class="old-price">58 AZN</p>
+                    <div class="combo-bs">
+                        <strong>45 AZN</strong>
+                        <button class="add">+</button>
+                    </div>
+                </div>
+
+                <div class="combo-card" data-name="Vegetarian Kombo" data-price="20">
+                    <span class="badge">🌱 VEGETARİAN</span>
+                    <img src="food/vegan combo.png" alt="Vegetarian Kombo" class="combo-photo" loading="lazy">
+                    <h3>Vegetarian Kombo</h3>
+                    <p>Qara Lobya Burger + Kartof dilimləri + Buzlu çay</p>
+                    <p class="old-price">23 AZN</p>
+                    <div class="combo-bs">
+                        <strong>20 AZN</strong>
+                        <button class="add">+</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= ÜNVANLAR ================= -->
+        <section id="branches" class="branches">
+            <h2>Ünvanlarımız</h2>
+            <div class="branch-container">
+                <div class="branch-card">
+                    <h3>📍 Mərkəz</h3>
+                    <p>Nizami küçəsi 45, Səbail rayonu</p>
+                    <p>🕒 10:00 – 02:00</p>
+                    <p>📞 +994 12 555 10 10</p>
+                </div>
+                <div class="branch-card">
+                    <h3>📍 Nərimanov</h3>
+                    <p>Təbriz küçəsi 12, Nərimanov rayonu</p>
+                    <p>🕒 10:00 – 00:00</p>
+                    <p>📞 +994 12 555 20 20</p>
+                </div>
+                <div class="branch-card">
+                    <h3>📍 Xətai</h3>
+                    <p>Babək prospekti 88, Xətai rayonu</p>
+                    <p>🕒 11:00 – 01:00</p>
+                    <p>📞 +994 12 555 30 30</p>
+                </div>
+                <div class="branch-card">
+                    <h3>📍 Yasamal</h3>
+                    <p>Şərifzadə küçəsi 7, Yasamal rayonu</p>
+                    <p>🕒 10:00 – 00:00</p>
+                    <p>📞 +994 12 555 40 40</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= İŞƏ QƏBUL ================= -->
+        <section id="careers" class="careers">
+            <h2>Bizimlə işləmək istəyirsən?</h2>
+            <p>Komandamıza enerjili aşpazlar, kassirlər və kuryerlər axtarırıq.</p>
+            <a href="careers.html" class="btn">Müraciət et</a>
+        </section>
+    </main>
+
+    <!-- ================= SƏBƏT ================= -->
+    <div class="overlay" id="overlay"></div>
+    <aside class="cart-panel" id="cartPanel">
+        <div class="cart-header">
+            <h2>Səbətiniz</h2>
+            <button class="close-cart" id="closeCart">✕</button>
+        </div>
+        <ul class="cart-items" id="cartItems"></ul>
+        <p class="cart-empty" id="cartEmpty">Səbətiniz boşdur 🍔</p>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Cəmi:</span>
+                <strong id="cartTotal">0.00 AZN</strong>
+            </div>
+            <form class="order-form" id="orderForm" novalidate>
+                <input type="text" id="orderName" placeholder="Adınız" autocomplete="name">
+                <input type="tel" id="orderPhone" placeholder="Telefon: +994 50 123 45 67" autocomplete="tel">
+                <input type="text" id="orderAddress" placeholder="Çatdırılma ünvanı" autocomplete="street-address">
+                <div class="error" id="orderError"></div>
+                <p class="consent">Sifariş verməklə <a href="terms.html" target="_blank">İstifadə Şərtlərini</a> və <a href="privacy.html" target="_blank">Məxfilik Siyasətini</a> qəbul edirsiniz.</p>
+            </form>
+            <button class="btn checkout" id="checkoutBtn">Sifariş et</button>
+            <button class="clear-cart" id="clearCart">Səbəti təmizlə</button>
+        </div>
+    </aside>
+
+    <div class="toast" id="toast"></div>
+
+    <footer>
+        <div class="footer-logo">Burger House Baku</div>
+        <p>📞 +994 12 555 00 00 • ✉️ info@burgerhousebaku.az</p>
+        <p class="footer-links"><a href="privacy.html">Məxfilik Siyasəti</a> • <a href="terms.html">İstifadə Şərtləri</a></p>
+        <p>© 2026 Burger House Baku</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+# Sətir sonlarını bütün kompüterlərdə eyni saxla
+* text=auto
+*.jpg binary
+*.jpeg binary
+*.png binary

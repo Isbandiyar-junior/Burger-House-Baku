@@ -1,0 +1,36 @@
+{
+  "burgers": [
+    { "name": "Classic Burger", "price": 12, "image": "burgers/klasik.jpg" },
+    { "name": "Bikon Burger", "price": 17, "image": "burgers/bikon.jpg" },
+    { "name": "Qara Lobya Burger", "price": 15.5, "image": "burgers/Qara lobya.jpg" },
+    { "name": "Xalapenyo Burger", "price": 11, "image": "burgers/xalapenyo.jpg" },
+    { "name": "Green Gourmet", "price": 11, "image": "burgers/Green Gourmet.jpg" },
+    { "name": "Avakado Burger", "price": 11, "image": "burgers/avakado.jpg" }
+  ],
+  "foods": [
+    { "name": "French Fries", "price": 4, "image": "food/frees.jpg" },
+    { "name": "Toyuq nuggets və tenders", "price": 6, "image": "food/toyuq.jpg" },
+    { "name": "Soğan halqaları", "price": 5, "image": "food/sogan.jpg" },
+    { "name": "Pendirli kartof", "price": 6, "image": "food/pendir kartof.jpg" },
+    { "name": "Acılı toyuq qanadları", "price": 9, "image": "food/acili toyuq qanadlari.jpg" },
+    { "name": "Mozzarella çubuqları", "price": 7, "image": "food/mozeralla cubuqlari.jpg" },
+    { "name": "Kartof dilimləri", "price": 4.5, "image": "food/kartof dilimleri.jpg" },
+    { "name": "Sezar salatı", "price": 8, "image": "food/sezar salati.jpg" }
+  ],
+  "drinks": [
+    { "name": "Coca-Cola", "price": 2, "image": "food/cola.jpg" },
+    { "name": "Fanta", "price": 2, "image": "food/fanta.jpg" },
+    { "name": "Ev limonadı", "price": 4, "image": "food/limonad.jpg" },
+    { "name": "Ayran", "price": 1.5, "image": "food/ayran.png" },
+    { "name": "Şokoladlı milkşeyk", "price": 5, "image": "food/skldmilk.png" },
+    { "name": "Çiyələkli milkşeyk", "price": 5, "image": "food/Str.png" },
+    { "name": "Buzlu çay", "price": 3, "image": "food/buzlu cay.jpg" },
+    { "name": "Mineral su", "price": 1, "image": "food/mineral su.jpg" }
+  ],
+  "combos": [
+    { "name": "Klassik Kombo", "price": 16, "image": "food/combo menyu.jpg" },
+    { "name": "Acılı Kombo", "price": 20, "image": "food/combo menyu 2.jpg" },
+    { "name": "Ailə Kombosu", "price": 45, "image": "food/family combo.png" },
+    { "name": "Vegetarian Kombo", "price": 20, "image": "food/vegan combo.png" }
+  ]
+}

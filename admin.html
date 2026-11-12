@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="az">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Admin | Burger House Baku</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .admin { max-width: 1100px; margin: 0 auto; padding: 30px 20px; }
+
+        /* Giriş */
+        .login-box { max-width: 360px; margin: 80px auto; background: #111; border: 1px solid #222; border-radius: 12px; padding: 30px; text-align: center; }
+        .login-box img { width: 90px; margin-bottom: 10px; }
+        .login-box h1 { color: #ff8c00; font-size: 24px; margin-bottom: 20px; }
+        .login-box input { width: 100%; padding: 12px; margin-bottom: 10px; background: #000; color: #fff; border: 1px solid #333; border-radius: 8px; font-size: 15px; }
+        .login-box input:focus { outline: none; border-color: #ff8c00; }
+        .login-box .btn { width: 100%; }
+
+        /* Başlıq */
+        .admin-top { display: flex; justify-content: space-between; align-items: center; gap: 15px; flex-wrap: wrap; margin-bottom: 25px; }
+        .admin-top h1 { color: #ff8c00; font-size: 28px; }
+        .admin-top .actions { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+        .small-btn { background: none; border: 1px solid #444; color: #ccc; padding: 8px 14px; border-radius: 8px; cursor: pointer; text-decoration: none; font-size: 14px; }
+        .small-btn:hover { border-color: #ff8c00; color: #ff8c00; }
+        .live { color: #8fff8f; font-size: 13px; }
+
+        /* Statistika */
+        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-bottom: 25px; }
+        .stat { background: #111; border: 1px solid #222; border-radius: 10px; padding: 18px; }
+        .stat span { color: #999; font-size: 13px; }
+        .stat strong { display: block; color: #ff8c00; font-size: 28px; margin-top: 6px; }
+
+        /* Tablar və filtrlər */
+        .tabs, .filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 15px; }
+        .tab, .chip { background: #111; border: 1px solid #333; color: #ccc; padding: 8px 16px; border-radius: 20px; cursor: pointer; font-size: 14px; }
+        .tab.active, .chip.active { background: #ff8c00; border-color: #ff8c00; color: #000; font-weight: bold; }
+
+        /* Sifariş kartları */
+        .list { display: flex; flex-direction: column; gap: 12px; }
+        .order { background: #111; border: 1px solid #222; border-left: 5px solid #ff8c00; border-radius: 10px; padding: 18px; display: grid; grid-template-columns: 1fr auto; gap: 10px 20px; }
+        .order.new { animation: flash 1.5s ease-out 2; }
+        @keyframes flash { 50% { background: #3a2200; } }
+        .order-head { display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap; }
+        .order-head strong { color: #ff8c00; font-size: 17px; }
+        .order-head time { color: #888; font-size: 13px; }
+        .order p { color: #ccc; font-size: 14px; line-height: 1.6; }
+        .order ul { list-style: none; color: #ddd; font-size: 14px; line-height: 1.6; margin-top: 6px; }
+        .order-side { text-align: right; display: flex; flex-direction: column; gap: 10px; align-items: flex-end; }
+        .order-total { color: #fff; font-size: 22px; font-weight: bold; }
+        .order select { background: #000; color: #fff; border: 1px solid #444; border-radius: 8px; padding: 8px; font-size: 14px; cursor: pointer; }
+
+        /* Status rəngləri */
+        .s-qebul { border-left-color: #ff8c00; }
+        .s-hazir { border-left-color: #f5d000; }
+        .s-yolda { border-left-color: #3fa9ff; }
+        .s-catdi { border-left-color: #3ecf5a; opacity: 0.75; }
+        .s-legv { border-left-color: #ff5c5c; opacity: 0.6; }
+
+        .empty { color: #777; text-align: center; padding: 40px; background: #111; border-radius: 10px; }
+        .app-card { background: #111; border: 1px solid #222; border-radius: 10px; padding: 18px; }
+        .app-card h3 { color: #ff8c00; margin-bottom: 6px; }
+        .app-card p { color: #ccc; font-size: 14px; line-height: 1.6; }
+
+        @media (max-width: 640px) {
+            .order { grid-template-columns: 1fr; }
+            .order-side { text-align: left; align-items: flex-start; }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Giriş forması -->
+    <div class="login-box" id="loginBox" hidden>
+        <img src="logo.jpeg" alt="Burger House Baku">
+        <h1>Admin paneli</h1>
+        <form id="loginForm">
+            <input type="password" id="password" placeholder="Parol" autocomplete="current-password" autofocus>
+            <div class="error" id="loginError"></div>
+            <button type="submit" class="btn">Daxil ol</button>
+        </form>
+    </div>
+
+    <!-- Panel -->
+    <div class="admin" id="panel" hidden>
+        <div class="admin-top">
+            <h1>🍔 Admin paneli</h1>
+            <div class="actions">
+                <span class="live" id="liveStatus">● Canlı</span>
+                <a href="/" class="small-btn">Sayta qayıt</a>
+                <button class="small-btn" id="logoutBtn">Çıxış</button>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat"><span>Bugünkü sifarişlər</span><strong id="statToday">–</strong></div>
+            <div class="stat"><span>Bugünkü gəlir</span><strong id="statRevenue">–</strong></div>
+            <div class="stat"><span>Aktiv sifarişlər</span><strong id="statActive">–</strong></div>
+            <div class="stat"><span>İş müraciətləri</span><strong id="statApps">–</strong></div>
+        </div>
+
+        <div class="tabs">
+            <button class="tab active" data-tab="orders">Sifarişlər</button>
+            <button class="tab" data-tab="applications">İş müraciətləri</button>
+        </div>
+
+        <section id="ordersTab">
+            <div class="filters" id="filters"></div>
+            <div class="list" id="orderList"></div>
+        </section>
+
+        <section id="applicationsTab" hidden>
+            <div class="list" id="appList"></div>
+        </section>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="admin-panel.js"></script>
+</body>
+</html>

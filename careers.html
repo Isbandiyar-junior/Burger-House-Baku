@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="az">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İşə qəbul | Burger House Baku</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <a href="index.html"><img src="logo.jpeg" alt="logo BHB" class="logo"></a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menyu">☰</button>
+        <nav class="navbar" id="navbar">
+            <a href="index.html#home">Ana səhifə</a>
+            <a href="index.html#burgers">Burgerlərimiz</a>
+            <a href="index.html#foods">Digər yeməklər</a>
+            <a href="index.html#drinks">İçkilər</a>
+            <a href="index.html#combos">Kombolar</a>
+            <a href="index.html#branches">Ünvanlarımız</a>
+            <a href="careers.html" class="active">İşə qəbul</a>
+        </nav>
+        <a href="index.html" class="cart" style="text-decoration:none;">🍔 Menyu</a>
+    </header>
+
+    <main class="career-page">
+        <section>
+            <h2>Bizimlə işləmək istəyirsən?</h2>
+            <p style="color:#ccc; margin-bottom:30px; line-height:1.6;">
+                Burger House Baku sürətlə böyüyən komandadır. Gənc, enerjili və dadlı yemək sevən insanları
+                aramızda görmək istəyirik. Çevik iş qrafiki, pulsuz yemək və karyera imkanları sizi gözləyir!
+            </p>
+
+            <div class="jobs">
+                <div class="job-card">
+                    <h3>👨‍🍳 Aşpaz</h3>
+                    <p>Burger və qəlyanaltıların hazırlanması, mətbəxin təmizliyinə nəzarət.</p>
+                    <p class="salary">1500 – 2000 AZN</p>
+                    <a href="#applyForm" class="btn" data-job="Aşpaz">Müraciət et</a>
+                </div>
+                <div class="job-card">
+                    <h3>💳 Kassir</h3>
+                    <p>Müştərilərin qarşılanması, sifarişlərin qəbulu və ödənişlər.</p>
+                    <p class="salary">750 AZN</p>
+                    <a href="#applyForm" class="btn" data-job="Kassir">Müraciət et</a>
+                </div>
+                <div class="job-card">
+                    <h3>🛵 Kuryer</h3>
+                    <p>Sifarişlərin Bakı ərazisində vaxtında çatdırılması. Sürücülük vəsiqəsi tələb olunur.</p>
+                    <p class="salary">800 AZN</p>
+                    <a href="#applyForm" class="btn" data-job="Kuryer">Müraciət et</a>
+                </div>
+            </div>
+
+            <h2 id="applyForm">Müraciət formu</h2>
+            <form class="career-form" id="careerForm" novalidate>
+                <label>Ad və soyad
+                    <input type="text" id="fullName" placeholder="Məs: Əli Məmmədov">
+                </label>
+                <div class="error" id="fullNameError"></div>
+
+                <label>Telefon
+                    <input type="tel" id="phone" placeholder="+994 50 123 45 67">
+                </label>
+                <div class="error" id="phoneError"></div>
+
+                <label>E-poçt
+                    <input type="email" id="email" placeholder="ad@mail.com">
+                </label>
+                <div class="error" id="emailError"></div>
+
+                <label>Vəzifə
+                    <select id="position">
+                        <option value="">-- Seçin --</option>
+                        <option value="Aşpaz">Aşpaz</option>
+                        <option value="Kassir">Kassir</option>
+                        <option value="Kuryer">Kuryer</option>
+                    </select>
+                </label>
+                <div class="error" id="positionError"></div>
+
+                <label>Özünüz haqqında (istəyə bağlı)
+                    <textarea id="about" rows="4" placeholder="Təcrübəniz, iş qrafiki istəyiniz..."></textarea>
+                </label>
+
+                <p class="consent">Müraciət göndərməklə məlumatlarınızın <a href="privacy.html" target="_blank">Məxfilik Siyasətinə</a> uyğun işlənməsinə razılıq verirsiniz.</p>
+
+                <button type="submit" class="btn">Göndər</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-logo">Burger House Baku</div>
+        <p>📞 +994 12 555 00 00 • ✉️ info@burgerhousebaku.az</p>
+        <p class="footer-links"><a href="privacy.html">Məxfilik Siyasəti</a> • <a href="terms.html">İstifadə Şərtləri</a></p>
+        <p>© 2026 Burger House Baku</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
